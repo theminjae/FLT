@@ -116,7 +116,8 @@ lemma adicCompletion.padicEquiv_norm_coe_eq
   rcases eq_or_ne x 0 with rfl | hx
   · simp [withValEquiv, Valuation.IsEquiv.uniformEquiv]
   · simp [padicValuation, withValEquiv, Valuation.IsEquiv.uniformEquiv,
-      valuation_apply_eq_padicValuation, hx, primesEquiv, natGenerator_eq_absNorm v]
+      valuation_apply_eq_padicValuation, hx, primesEquiv, natGenerator_eq_absNorm v,
+      WithZero.exp_neg, -WithZero.inv_exp]
     -- TODO: need to fix some defeq abuse upstream in FinitePlace.norm_def' to avoid the next line
     rfl
 
